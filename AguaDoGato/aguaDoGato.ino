@@ -3,17 +3,16 @@ int relayPin = 8; // Pin do relé
 
 void setup() {
     Serial.begin(9600);
-    pinMode(LED_BUILTIN, OUTPUT); // Temporário
-    pinMode(relayPin, OUTPUT); // Seta o pin do relay como OUTU
+    pinMode(relayPin, OUTPUT); // Seta o pin do relay como OUTPUT
     digitalWrite(relayPin, LOW); // Pra comecar com o relé desligado
-    Serial.println("Comecou");
+    Serial.println("Vai começar!");
     delay(5000);                         
 }
  
 void loop() {
   while (digitalRead(motionPin) == HIGH) {
     digitalWrite(relayPin, HIGH); //Ligar o rele
-    Serial.println("Rele tá ligado! %%%%%%%%%%%%%%%%%%%%%%%%%%%");
+    Serial.println("Rele ligado!");
     delay(60000);
   }
   digitalWrite(relayPin, LOW); //desligar o rele
